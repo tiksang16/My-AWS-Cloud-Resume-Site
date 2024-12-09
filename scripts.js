@@ -1,21 +1,14 @@
-// Select the theme toggle button
-const themeToggle = document.getElementById("theme-toggle");
+const apiEndpoint = "https://byonwtume8.execute-api.us-east-2.amazonaws.com/prod/visitor-count"; 
 
-// Add an event listener for clicks on the toggle button
-themeToggle.addEventListener("click", () => {
-  // Check if the body currently has the "dark" class
-  if (document.body.classList.contains("dark")) {
-    // Switch to light mode
-    document.body.classList.remove("dark");
-    document.body.classList.add("light");
-    themeToggle.textContent = "🌙"; // Moon icon for dark mode
-  } else {
-    // Switch to dark mode
-    document.body.classList.remove("light");
-    document.body.classList.add("dark");
-    themeToggle.textContent = "☀️"; // Sun icon for light mode
+async function updateVisitorCount() {
+  try {
+    const response = await fetch(apiEndpoint);
+    const data = await response.json();
+    document.getElementById("view-count").textContent = data.count;
+  } catch (error) {
+    console.error("Error fetching visitor count:", error);
   }
-});
+}
 
-// Set default mode to light if no theme is set
-document.body.classList.add("light");
+// Call the function to update the visitor count
+updateVisitorCount();
