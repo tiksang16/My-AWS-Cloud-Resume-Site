@@ -3,24 +3,24 @@ name: Deploy to S3 and Invalidate CloudFront Cache
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the 'main' branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
+      # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install AWS CLI
+      # Install AWS CLI
       - name: Install AWS CLI
         run: |
           sudo apt-get update
           sudo apt-get install -y awscli
 
-      # Step 3: Configure AWS credentials
+      # Configure AWS credentials
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
@@ -28,14 +28,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # Step 4: Sync files to S3
+      # Sync files to S3
       - name: Deploy to S3
         run: |
           aws s3 sync . s3://myresume-site-bucket --delete
         env:
           S3_BUCKET: myresume-site-bucket
 
-      # Step 5: Invalidate CloudFront cache
+      # Invalidate CloudFront cache
       - name: Invalidate CloudFront Cache
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
