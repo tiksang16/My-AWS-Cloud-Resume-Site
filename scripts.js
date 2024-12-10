@@ -9,6 +9,4 @@ async function updateVisitorCount() {
     console.error("Error fetching visitor count:", error);
   }
 }
-
-// Call the function to update the visitor count
 updateVisitorCount();
