@@ -1,6 +1,6 @@
 # Cloud Resume Website
 
-This repository contains the code and deployment configuration for my **Cloud Resume Website**. The site is built, hosted, and deployed on AWS using various services, including **S3**, **CloudFront**, **Route 53**, **API Gateway**, **Lambda**, and **DynamoDB**. Below, I outline the steps and services I used to build and deploy the project.
+This repository contains the code and deployment configuration for my **Resume Website**. The site is built, hosted, and deployed on AWS using various services, including **S3**, **CloudFront**, **Route 53**, **API Gateway**, **Lambda**, and **DynamoDB**.
 
 ---
 
@@ -10,7 +10,7 @@ This repository contains the code and deployment configuration for my **Cloud Re
 - **Amazon Route 53**: Domain registration and DNS management.
 - **AWS DynamoDB**: NoSQL database for storing visitor count.
 - **AWS Lambda**: Serverless function to handle backend logic.
-- **AWS API Gateway**: REST API to connect the frontend with the backend.
+- **AWS API Gateway**: HTTP API to connect the frontend with the backend.
 - **GitHub Actions**: CI/CD pipeline for automated deployment.
 - **IAM**: Secure access management for AWS resources.
 
@@ -18,16 +18,6 @@ This repository contains the code and deployment configuration for my **Cloud Re
 
 ## **Demo**
 You can view my live resume website here: [Tik Sang Chan - Resume](https://www.tik-sang.net/)
-
----
-
-## **Features**
-- Hosted on **Amazon S3** as a static website.
-- Secured and accelerated with **CloudFront** (CDN).
-- Domain registered and managed with **Amazon Route 53**.
-- Visitor counter implemented with **DynamoDB**, **API Gateway**, and **Lambda**.
-- Automated deployment using **GitHub Actions** for CI/CD.
-- Managed with **IAM** to ensure secure access to AWS resources.
 
 ---
 
@@ -143,7 +133,7 @@ You can view my live resume website here: [Tik Sang Chan - Resume](https://www.t
      ```
 
 4. **AWS API Gateway:**
-   - Created an API Gateway endpoint to invoke the Lambda function and expose it as a RESTful API.
+   - Created an API Gateway endpoint to invoke the Lambda function
    - Configured the API to accept `GET` requests and return the visitor count.
 
 5. **Integrate API with Frontend:**
