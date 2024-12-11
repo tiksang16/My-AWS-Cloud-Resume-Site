@@ -186,7 +186,7 @@ You can view my live resume website here: [Tik Sang Chan - Resume](https://www.t
 
 ---
 
-## **7. Secure Access with IAM**
+### **7. Secure Access with IAM**
 1. **Created an IAM user:**
    - Created a dedicated IAM user for the CI/CD pipeline with **programmatic access**.
    - Attached a custom policy to grant the user access to S3, CloudFront, DynamoDB, and Lambda.
