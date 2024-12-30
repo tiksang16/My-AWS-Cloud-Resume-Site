@@ -1,0 +1,333 @@
+/* Custom Branding for "Tik Sang" */
+body {
+  background-color: #061936;
+  color: #C9D1D9;
+  margin: 0; 
+  padding: 0; 
+}
+
+.navbar .custom-brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #3B80E9
+}
+
+/* Separate Text Colors for Tik and Sang */
+.custom-brand .text-tik {
+  color: #C9D1D9; /* Light gray */
+}
+
+.custom-brand .text-blue {
+  color: #3B80E9; /* Blue */
+}
+
+.text-blue {
+  color: #3B80E9; /* Blue */
+}
+
+.navbar-nav {
+  background: #061936;
+}
+
+.navbar {
+  background: #061936;
+}
+
+/* Navigation Bar Links */
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #C9D1D9; 
+}
+
+.navbar-nav .nav-link:hover {
+  color: #3B80E9;
+}
+
+/* Download CV Button */
+.download-cv-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 4px;
+
+
+  background: #3B80E9;
+  border-radius: 50px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect for Button */
+.download-cv-btn:hover {
+  background: #2B6AC1; /* Slightly darker blue for hover */
+}
+
+/* Header Section */
+.header-section {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Top Intro Section */
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.hello {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 37px;
+  color: #C9D1D9;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links .icon {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  background-color: #C9D1D9;
+  border-radius: 50%;
+}
+
+.social-links .linkedin {
+  background-image: url('http://www.w3.org/2000/svg'); /* Replace with actual LinkedIn icon path */
+  /* background-size: cover; */
+}
+
+.social-links .github {
+  background-image: url('mdi_github.svg'); /* Replace with actual GitHub icon path */
+  /* background-size: cover; */
+}
+
+/* Main Heading */
+.heading {
+  display: grid;
+  grid-template-columns: auto auto auto; /* Adjusted for better spacing */
+  width: 100%; /* Ensure it stays within the container */
+
+  margin: 0 auto; /* Center the heading within the page */
+  position: relative; /* Allow overlapping elements */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.text-left .qa {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 100px;
+  color: #E9EFF3;
+  text-align: left;
+}
+
+.text-left {
+  grid-column: 1;
+  position: relative;
+  z-index: 1; /* Ensure it overlaps correctly */
+}
+
+
+.text-center .ampersand {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 280px;
+  line-height: 400px;
+  color: #3B80E9;
+  margin: 0;
+  text-align: center;
+}
+
+.text-center {
+  grid-column: 2;
+  position: relative;
+  z-index: 2; 
+} 
+
+
+.text-right .devops {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 100px;
+  color: #E9EFF3;
+  text-align: right;
+}
+
+.text-right {
+  grid-column: 3;
+  position: relative;
+  z-index: 3; 
+  top: 21%
+}
+
+/* Footer Section */
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.footer-section .developed-by,
+.footer-section .view-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: #C9D1D9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .heading {
+    display: flex; /* Switch from grid to flexbox for stacking */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align all text */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .text-left .qa,
+  .text-right .devops {
+    font-size: 80px; /* Reduce font size for smaller screens */
+    line-height: 80px;
+    text-align: center; /* Center-align for better readability */
+  }
+
+  .text-center .ampersand {
+    font-size: 200px; /* Reduce size of the ampersand */
+    line-height: 200px;
+    margin: 20px 0; /* Add spacing between stacked elements */
+    opacity: 1; /* Make it fully opaque for better visibility */
+  }
+}
+
+/* About Me Section */
+.about-me-section {
+  padding: 60px 20px; /* Add padding for spacing */
+  background: rgba(33, 43, 58, 0.8); /* Semi-transparent dark background */
+  color: #C9D1D9; /* Light gray text */
+}
+
+.about-me-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space between decorative and content */
+  max-width: 1200px; /* Center content on large screens */
+  margin: 0 auto; /* Center horizontally */
+  gap: 100px; /* Add spacing between decorative and content */
+}
+
+/* Decorative Large Text */
+.about-me-decorative {
+  flex: 0 0 20%; /* Take up 20% of the width */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px; /* Add spacing between slashes */
+}
+
+.decorative-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 200px; /* Large text size */
+  line-height: 200px; /* Align with height */
+  margin: 0; /* Remove default margin */
+}
+
+.decorative-text.blue {
+  color: #3B80E9; /* Blue slash color */
+}
+
+.decorative-text.light {
+  color: #E9EFF3; /* Light gray slash color */
+}
+
+/* About Me Content */
+.about-me-content {
+  flex: 1; /* Take up the remaining space */
+  max-width: 750px; /* Limit the width for readability */
+}
+
+.about-me-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 0.8;
+  margin-top: 30px;
+  color: #E9EFF3; /* Light gray text */
+}
+
+.about-me-description {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 20px; /* Add spacing between paragraphs */
+  color: #C9D1D9; /* Light gray text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-me-wrapper {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  .about-me-decorative {
+    flex: 0 0 auto; /* Allow flexible height */
+    align-items: center; /* Center the slashes */
+    gap: 10px; /* Reduce gap between slashes */
+  }
+
+  .decorative-text {
+    font-size: 150px; /* Reduce size for smaller screens */
+    line-height: 150px;
+  }
+
+  .about-me-content {
+    max-width: 100%; /* Allow full width on smaller screens */
+  }
+
+  .about-me-title {
+    font-size: 60px; /* Reduce title size */
+    line-height: 60px;
+  }
+
+  .about-me-description {
+    font-size: 16px; /* Reduce paragraph font size */
+    line-height: 24px;
+  }
+}
