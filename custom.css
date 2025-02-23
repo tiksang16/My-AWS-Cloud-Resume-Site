@@ -133,19 +133,21 @@ body {
 /* Main Heading */
 .heading {
   display: grid;
-  grid-template-columns: auto auto auto; /* Adjusted for better spacing */
+  grid-template-columns: 1fr auto 1fr; /* Use flexible columns */
   width: 100%; /* Ensure it stays within the container */
-
   margin: 0 auto; /* Center the heading within the page */
   position: relative; /* Allow overlapping elements */
   overflow: hidden; /* Prevent overflow */
+  gap: 10px; /* Add spacing between columns */
+  padding-top: 10px; /* Add space at the top */
+  padding-bottom: 100px; /* Add space at the bottom */
 }
 
 .text-left .qa {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  font-size: 100px;
-  line-height: 100px;
+  font-size: 80px; /* Reduced font size */
+  line-height: 90px; /* Adjusted line height */
   color: #E9EFF3;
   text-align: left;
 }
@@ -156,12 +158,11 @@ body {
   z-index: 1; /* Ensure it overlaps correctly */
 }
 
-
 .text-center .ampersand {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  font-size: 280px;
-  line-height: 400px;
+  font-size: 200px; /* Reduced font size */
+  line-height: 200px; /* Adjusted line height */
   color: #3B80E9;
   margin: 0;
   text-align: center;
@@ -170,15 +171,14 @@ body {
 .text-center {
   grid-column: 2;
   position: relative;
-  z-index: 2; 
-} 
-
+  z-index: 2;
+}
 
 .text-right .devops {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  font-size: 100px;
-  line-height: 100px;
+  font-size: 80px; /* Reduced font size */
+  line-height: 90px; /* Adjusted line height */
   color: #E9EFF3;
   text-align: right;
 }
@@ -186,48 +186,61 @@ body {
 .text-right {
   grid-column: 3;
   position: relative;
-  z-index: 3; 
-  top: 21%
-}
-
-/* Footer Section */
-.footer-section {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-  width: 100%;
-}
-
-.footer-section .developed-by,
-.footer-section .view-count {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 21px;
-  color: #C9D1D9;
+  z-index: 3;
+  top: 10%; /* Adjusted positioning */
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .text-left .qa,
+  .text-right .devops {
+    font-size: 60px; /* Further reduce font size for medium screens */
+    line-height: 70px;
+  }
+
+  .text-center .ampersand {
+    font-size: 150px; /* Further reduce size of the ampersand */
+    line-height: 150px;
+  }
+}
+
 @media (max-width: 768px) {
   .heading {
     display: flex; /* Switch from grid to flexbox for stacking */
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center-align all text */
     padding: 10px; /* Adjust padding for smaller screens */
+    gap: 10px; /* Reduce gap between stacked elements */
   }
 
   .text-left .qa,
   .text-right .devops {
-    font-size: 80px; /* Reduce font size for smaller screens */
-    line-height: 80px;
+    font-size: 50px; /* Further reduce font size for smaller screens */
+    line-height: 60px;
     text-align: center; /* Center-align for better readability */
   }
 
   .text-center .ampersand {
-    font-size: 200px; /* Reduce size of the ampersand */
-    line-height: 200px;
-    margin: 20px 0; /* Add spacing between stacked elements */
-    opacity: 1; /* Make it fully opaque for better visibility */
+    font-size: 120px; /* Further reduce size of the ampersand */
+    line-height: 120px;
+    margin: 10px 0; /* Add spacing between stacked elements */
+  }
+
+  .text-right {
+    top: 0; /* Reset positioning for stacked layout */
+  }
+}
+
+@media (max-width: 480px) {
+  .text-left .qa,
+  .text-right .devops {
+    font-size: 40px; /* Further reduce font size for very small screens */
+    line-height: 50px;
+  }
+
+  .text-center .ampersand {
+    font-size: 100px; /* Further reduce size of the ampersand */
+    line-height: 100px;
   }
 }
 
@@ -273,6 +286,23 @@ body {
 
 .decorative-text.light {
   color: #E9EFF3; /* Light gray slash color */
+}
+
+/* Count Section */
+.count-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.count-section .developed-by,
+.count-section .view-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: #C9D1D9;
 }
 
 /* About Me Content */
@@ -329,5 +359,300 @@ body {
   .about-me-description {
     font-size: 16px; /* Reduce paragraph font size */
     line-height: 24px;
+  }
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 60px 20px; /* Add padding for spacing */
+  color: #C9D1D9; /* Light gray text */
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space between decorative and content */
+  max-width: 1200px; /* Center content on large screens */
+  margin: 0 auto; /* Center horizontally */
+  gap: 100px; /* Add spacing between decorative and content */
+}
+
+/* Decorative Large Text */
+.skills-decorative {
+  flex: 0 0 20%; /* Take up 20% of the width */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px; /* Add spacing between slashes */
+}
+
+.skills-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 0.8;
+  margin-top: 30px;
+  color: #E9EFF3; /* Light gray text */
+}
+
+.skills-content {
+  flex: 1; /* Take up the remaining space */
+  max-width: 750px; /* Limit the width for readability */
+}
+
+.skills-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px; /* Add spacing between columns */
+}
+
+.skills-column {
+  flex: 1;
+}
+
+.skills-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  text-decoration-line: underline;
+  color: #C9D1D9; /* Light gray text */
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #C9D1D9; /* Light gray text */
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin-bottom: 20px; /* Add spacing between sections */
+}
+
+.skills-list li {
+  margin-bottom: 10px; /* Add spacing between list items */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  .skills-decorative {
+    flex: 0 0 auto; /* Allow flexible height */
+    align-items: center; /* Center the slashes */
+    gap: 10px; /* Reduce gap between slashes */
+  }
+
+  .decorative-text {
+    font-size: 150px; /* Reduce size for smaller screens */
+    line-height: 150px;
+  }
+
+  .skills-content {
+    max-width: 100%; /* Allow full width on smaller screens */
+  }
+
+  .skills-title {
+    font-size: 60px; /* Reduce title size */
+    line-height: 60px;
+  }
+
+  .skills-columns {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
+
+  .skills-subtitle,
+  .skills-list {
+    font-size: 16px; /* Reduce font size for smaller screens */
+    line-height: 24px;
+  }
+}
+
+/* Footer Section */
+.footer-section {
+  background: rgba(33, 43, 58, 0.8); /* Semi-transparent dark background */
+  padding: 60px 20px 20px; /* Add padding for spacing */
+  color: #C9D1D9; /* Light gray text */
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Left Side: Tik Sang */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 106px;
+  text-transform: uppercase;
+  color: #C9D1D9; /* Light gray text */
+}
+
+.footer-brand .text-tik {
+  color: #C9D1D9; /* Light gray */
+}
+
+.footer-brand .text-blue {
+  color: #3B80E9; /* Blue */
+}
+
+/* Right Side: Quick Links and Get In Touch */
+.footer-right {
+  display: flex;
+  gap: 100px; /* Spacing between columns */
+}
+
+.footer-column {
+  text-align: left;
+}
+
+.footer-heading {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #C9D1D9; /* Light gray text */
+  margin-bottom: 15px;
+}
+
+.footer-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #C9D1D9; /* Light gray text */
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #3B80E9; /* Blue on hover */
+}
+
+/* Let's Talk and Download CV */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lets-talk-heading {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 53px;
+  color: #C9D1D9; /* Light gray text */
+  margin: 0;
+}
+
+.download-cv {
+  display: inline-block;
+  padding: 12px 16px;
+  background: #3B80E9;
+  border-radius: 50px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: #061936; /* Dark blue text */
+  text-align: center;
+  text-decoration: none;
+}
+
+.download-cv:hover {
+  background: #2B6AC1; /* Slightly darker blue on hover */
+}
+
+/* Separator Line */
+.footer-separator {
+  width: 100%;
+  max-width: 1200px;
+  height: 1px;
+  background: #C9D1D9; /* Light gray line */
+  margin: 40px auto;
+}
+
+/* Copyright */
+.footer-copyright {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #C9D1D9; /* Light gray text */
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .footer-link {
+    font-size: 16px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .lets-talk-heading {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .download-cv {
+    font-size: 18px;
+    padding: 10px 14px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
   }
 }
